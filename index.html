@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- PC에서만 보이는 배경 비디오 -->
+    <video class="video-layer pc-video" autoplay muted loop>
+        <source src="img/snow.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- 기본 배경 이미지 (PC에서만 보임) -->
+    <img src="img/ba.png" alt="Background Image" class="background-image">
+
+    <!-- 나머지 이미지들 -->
+    <img src="img/header.png" alt="Header Image" class="header-image">
+    <img src="img/img_1.png" alt="Image 1" class="img_1-image moving-image" data-alt-src="img/S_1.png">
+    <img src="img/img_2.png" alt="Image 2" class="img_2-image moving-image" data-alt-src="img/S_2.png">
+    <img src="img/img_3.png" alt="Image 3" class="img_3-image moving-image" data-alt-src="img/S_3.png">
+    <img src="img/img_4.png" alt="Image 4" class="img_4-image moving-image" data-alt-src="img/S_4.png">
+
+     <!-- 모바일에서만 보이는 배경 비디오 -->
+     <video class="mobile-video" autoplay muted loop>
+        <source src="img/ph_snow.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+ <!-- 모바일에서만 보이는 이미지 -->
+<img src="img/ph_ba.png" alt="Mobile Image ba" class="mobile-only-image ph_ba-image">
+<!-- 모바일에서만 보이는 이미지 -->
+<img src="img/ph_1.png" alt="Mobile Image 1" class="mobile-only-image ph_1-image" data-alt-src="img/ph_11.png">
+<img src="img/ph_2.png" alt="Mobile Image 2" class="mobile-only-image ph_2-image" data-alt-src="img/ph_22.png">
+<img src="img/ph_3.png" alt="Mobile Image 3" class="mobile-only-image ph_3-image" data-alt-src="img/ph_33.png">
+<img src="img/ph_4.png" alt="Mobile Image 4" class="mobile-only-image ph_4-image" data-alt-src="img/ph_44.png">
+
+
+<script src="script.js"></script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Lexend+Giga:wght@900&family=Noto+Sans+KR:wght@500&family=Racing+Sans+One&display=swap');
+    </style>
+
+<div class="header-text">
+Merry Christmas
+</div>
+
+<div class="footer-text">
+    Digital publishing2 지도교수 나상호<br>
+    Copyright2024 배유진
+</div>
+
+</body>
+</html>

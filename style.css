@@ -1,0 +1,328 @@
+
+.header-text {
+    font-family: 'Lexend Giga' 
+}
+
+/* 기본 스타일 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 배경 비디오 (PC에서만 보이는 비디오) */
+.video-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* 다른 요소들 뒤로 */
+}
+
+/* 모바일 화면에서만 보이는 비디오 */
+.mobile-video {
+    display: none;
+}
+
+/* PC 화면에서만 보이는 비디오 */
+.pc-video {
+    display: block; /* PC에서는 비디오가 보임 */
+}
+
+/* 배경 이미지 */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* 헤더 이미지 */
+.header-image {
+    position: absolute;
+    top: 150px;
+    left: 598px;
+    width: calc(50% - 392px);
+    height: auto;
+    box-sizing: border-box;
+    z-index: 2; /* 이미지들이 비디오보다 위에 표시 */
+}
+
+/* 기본 이미지 스타일 */
+.img_1-image, .img_2-image, .img_3-image, .img_4-image {
+    position: absolute;
+    width: 341px;
+    height: 360px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 3; /* 이미지를 비디오보다 위에 배치 */
+}
+
+/* 첫 번째 이미지 */
+.img_1-image {
+    top: 140px;
+    left: 151px;
+}
+
+/* 두 번째 이미지 */
+.img_2-image {
+    top: 530px;
+    left: 190px;
+}
+
+/* 세 번째 이미지 */
+.img_3-image {
+    top: 450px;
+    left: 1100px;
+    z-index: 2; /* 위로 올라가도록 설정 */
+    transition: transform 0.3s ease;
+}
+
+/* 네 번째 이미지 */
+.img_4-image {
+    top: 220px;
+    left: 1300px;
+    z-index: 2; /* 위로 올라가도록 설정 */
+    transition: transform 0.3s ease;
+}
+
+/* 마우스를 올렸을 때 부드럽게 움직이는 효과 */
+.moving-image:hover {
+    cursor: pointer;
+}
+
+.moving-image {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* 초기 이미지 스타일 */
+.image {
+    width: 341px;
+    height: 360px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* 숨겨진 이미지 */
+.hidden {
+    display: none; /* 이미지를 완전히 숨김 */
+}
+
+/* 모바일 전용 이미지 숨기기 (기본값) */
+.mobile-only-image {
+    display: none; /* 기본적으로 PC에서 숨김 */
+}
+
+/* 모바일 전용 스타일 */
+@media (max-width: 390px) and (max-height: 844px) {
+    /* 모바일 비디오 */
+    .mobile-video {
+        display: block; /* 모바일 화면에서는 이 비디오만 보임 */
+        width: 100vw;  /* 화면 가로 크기 꽉 채우기 */
+        height: 100vh; /* 화면 세로 크기 꽉 채우기 */
+        object-fit: cover;  /* 비율을 유지하면서 화면을 꽉 채우도록 설정 */
+        z-index: -1; /* 비디오가 모든 요소 뒤에 위치 */
+    }
+
+    /* PC 화면에서는 비디오 숨기기 */
+    .pc-video {
+        display: none; /* PC 화면에서는 비디오 숨기기 */
+    }
+
+    /* 모바일에서 기존 배경 이미지 숨기기 */
+    .background-image {
+        display: none; /* 모바일에서 기존 배경 이미지 숨기기 */
+        
+    }
+
+    .footer-text{
+        display: none; /* PC 화면에서는 비디오 숨기기 */
+    }
+
+    .img_1-image {
+        display: none; /* 모바일에서 기존 배경 이미지 숨기기 */
+    }
+    .img_2-image {
+        display: none; /* 모바일에서 기존 배경 이미지 숨기기 */
+    }
+    .img_3-image {
+        display: none; /* 모바일에서 기존 배경 이미지 숨기기 */
+    }
+    .img_4-image {
+        display: none; /* 모바일에서 기존 배경 이미지 숨기기 */
+    }
+
+
+    /* 모바일에서 배경 이미지 보이기 */
+    .background-image-mobile {
+        display: block; /* 모바일에서 새로운 배경 이미지 보이기 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    
+    /* 헤더 이미지 */
+    .header-image {
+        position: absolute;
+        top: 100px;
+        left: 50%;  /* 화면의 50% 위치로 이동 */
+        transform: translateX(-50%); /* 너비의 절반만큼 왼쪽으로 이동해 중앙 정렬 */
+        width: 50%;  /* 화면 너비의 90%로 크기 설정 */
+        max-width: 500px; /* 최대 너비 제한 */
+        height: auto;
+        box-sizing: border-box;
+        z-index: 2;
+    }
+
+/* 모바일 화면에서 보이도록 설정 */
+@media (max-width: 768px) { /* 768px 이하를 모바일로 간주 */
+    .mobile-only-image {
+        display: block; /* 모바일에서 이미지를 표시 */
+        position: absolute;
+        width: 100%; /* 너비를 적절히 설정 */
+        max-width: 120px; /* 최대 크기 제한 */
+        height: auto; /* 비율 유지 */
+        z-index: 3; /* 다른 요소 위로 배치 */
+    }
+}
+    
+  /* 공통 스타일 */
+   .ph_2-image,.ph_4-image {
+    position: absolute;
+    width: 45vw; /* 화면 너비의 45% */
+    height: auto; /* 비율 유지 */
+    max-width: none; /* 최대 크기 제한 없음 */
+    max-height: none; /* 최대 높이 제한 없음 */
+    object-fit: contain; /* 비율 유지하며 전체 표시 */
+    z-index: 3; /* 다른 요소보다 위에 배치 */
+    transition: transform 0.3s ease; /* 크기 변경 시 부드러운 전환 */
+}
+
+.ph_1-image,.ph_3-image {
+    position: absolute;
+    width: 50vw; /* 화면 너비의 45% */
+    height: auto; /* 비율 유지 */
+    max-width: none; /* 최대 크기 제한 없음 */
+    max-height: none; /* 최대 높이 제한 없음 */
+    object-fit: contain; /* 비율 유지하며 전체 표시 */
+    z-index: 3; /* 다른 요소보다 위에 배치 */
+    transition: transform 0.3s ease; /* 크기 변경 시 부드러운 전환 */
+}
+
+    /* 첫 번째 이미지 */
+    .ph_1-image {
+        top: 170px;  /* 상단 간격 */
+        left: 5%;   /* 왼쪽 정렬 */
+        rotate: 15%;
+    }
+
+    /* 두 번째 이미지 */
+    .ph_2-image {
+        top: 330px; /* 첫 번째 이미지와 간격 */
+        left: 5%;   /* 왼쪽 정렬 */
+    }
+
+    /* 세 번째 이미지 */
+    .ph_3-image {
+        top: 120px;  /* 상단 간격 */
+        right: 5%;  /* 오른쪽 정렬 */
+    }
+
+    /* 네 번째 이미지 */
+    .ph_4-image {
+        top: 320px; /* 세 번째 이미지와 간격 */
+        right: 5%;  /* 오른쪽 정렬 */
+    }
+}
+
+@media (max-width: 768px) { /* 모바일 환경 */
+    .mobile-only-image {
+        display: block; /* 모바일에서만 보이게 설정 */
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-only-image {
+        display: block;
+    }
+}
+
+/* PC 화면에서 확실히 숨기기 */
+@media (min-width: 769px) { /* 769px 이상은 PC 화면 */
+    .ph_ba-image {
+        display: none !important;
+    }
+}
+
+.ph_ba-image {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw; /* 화면 너비의 80% */
+    height: auto; /* 비율 유지 */
+    max-width: none; /* 최대 너비 제한 */
+    max-height: none; /* 최대 높이 제한 */
+    object-fit: contain;
+    z-index: 1;
+}
+
+.footer-text {
+    position: absolute; /* 부모 요소 기준으로 위치 설정 */
+    bottom: 10px; /* 화면 맨 아래에서 20px 간격 */
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translateX(-50%); /* 수평 중앙으로 보정 */
+    font-size: 10px; /* 텍스트 크기 */
+    color: #ffffff; /* 텍스트 색상 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    opacity: 60%;
+}
+
+
+.header-text {
+    font-family: 'Lexend Giga', cursive;
+    position: absolute; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    font-size: 90px; /* 크기 줄임 */
+    color: #05AF00;
+    text-align: center;
+    white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+/* 모바일 전용 스타일 */
+@media (max-width: 768px) {
+    .footer-text {
+        font-size: 7px; /* 모바일에서 폰트 크기 조정 */
+        bottom: 10px; /* 하단 여백 조정 */
+        color: #ffffff; /* 텍스트 색상 */
+        display: block; /* 강제로 보이도록 설정 */
+        opacity: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-text {
+        font-size: 30px; /* 모바일에서 폰트 크기 조정 */
+        top: 40px; /* 하단 여백 조정 */
+        color: #05AF00; /* 텍스트 색상 */
+        display: block; /* 강제로 보이도록 설정 */
+      
+    }
+}
